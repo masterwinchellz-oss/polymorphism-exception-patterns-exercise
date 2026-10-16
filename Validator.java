@@ -19,9 +19,9 @@ public final class Validator {
 
     public static String requireValidName(String value) {
         if (value == null || value.trim().isEmpty())
-            throw new IllegalArgumentException("Name cannot be empty.");
+            throw new IllegalArgumentException("\nName cannot be empty.");
         if (!value.matches("[a-zA-Z ]+"))
-            throw new IllegalArgumentException("Name can only contain letters and spaces.");
+            throw new IllegalArgumentException("\nName can only contain letters and spaces.");
         return value.trim();
     }
 

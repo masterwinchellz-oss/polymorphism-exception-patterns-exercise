@@ -76,7 +76,7 @@ public class Main{
     boolean isValid = false;
     while (!isValid) {
         try {
-            tracking = readLine("Enter tracking number (ABC0000): ").toUpperCase();
+            tracking = readLine("\nEnter tracking number (ABC0000): ").toUpperCase();
             Validator.requireTrackingNumber(tracking);
             if (manager.findByTrackingNumber(tracking) != null)
                 throw new IllegalArgumentException("Duplicate tracking number!");
@@ -98,7 +98,7 @@ public class Main{
         }
     }
 
-    // Weight (limit depends on the type)
+    // Weight 
     double maxWeight = (type == 1) ? 0.5 : (type == 2) ? 50 : 30;
     double weight = 0;
     isValid = false;
@@ -142,7 +142,6 @@ public class Main{
             break;
     }
 
-    // Service + creating the parcel (Same Day can still be rejected for heavy parcels)
     Parcel parcel = null;
     isValid = false;
     while (!isValid) {
@@ -158,7 +157,7 @@ public class Main{
                 candidate = new FragileParcel(tracking, receiver, weight, service, length, width, height, note);
             }
 
-            manager.addParcel(candidate);   // throws if the service isn't allowed
+            manager.addParcel(candidate);   
             parcel = candidate;
             isValid = true;
         } catch (IllegalArgumentException ex) {
