@@ -165,12 +165,12 @@ public class Main{
         }
     }
 
-    System.out.printf("Parcel added successfully! Delivery fee: Php %.2f%n", parcel.getDeliveryFee());
+    System.out.printf("\nParcel added successfully! Delivery fee: Php %.2f%n", parcel.getDeliveryFee());
 }
 
     private static void viewAllParcels() {
         if (!hasParcels()) return;
-        System.out.printf("%-12s %-10s %-20s %-12s %-12s %-12s %-10s%n",
+        System.out.printf("\n%-12s %-10s %-20s %-12s %-12s %-12s %-10s%n",
                 "Tracking", "Type", "Receiver", "Charge kg", "Service", "Fee (Php)", "Status");
         for (Parcel parcel : manager.getParcels()) {
             System.out.printf("%-12s %-10s %-20s %-12.2f %-12s %-12.2f %-10s%n",

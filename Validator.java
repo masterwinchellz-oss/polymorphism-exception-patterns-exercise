@@ -27,7 +27,7 @@ public final class Validator {
 
     public static double requirePositiveWeight(double weight) {
         if (!Double.isFinite(weight) || weight <= 0)
-            throw new IllegalArgumentException("Weight must be greater than 0.");
+            throw new IllegalArgumentException("\nWeight must be greater than 0.");
         return weight;
     }
 
@@ -54,7 +54,7 @@ public final class Validator {
         try {
             return Integer.parseInt(text.trim());
         } catch (NumberFormatException ex) {
-            throw new IllegalArgumentException("Please enter a valid whole number.");
+            throw new IllegalArgumentException("\nPlease enter a valid whole number.");
         }
     }
 
@@ -62,7 +62,7 @@ public final class Validator {
         try {
             return Double.parseDouble(text.trim());
         } catch (NumberFormatException ex) {
-            throw new IllegalArgumentException("Please enter a valid number.");
+            throw new IllegalArgumentException("\nPlease enter a valid number.");
         }
     }
 }
